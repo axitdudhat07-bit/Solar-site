@@ -8,14 +8,26 @@ import Home from "@/pages/Home";
 import Products from "@/pages/Products";
 import Contact from "@/pages/Contact";
 import About from "@/pages/About";
+import AdminLogin from "@/pages/admin/Login";
+import AdminDashboard from "@/pages/admin/Dashboard";
+import AdminProducts from "@/pages/admin/Products";
+import AdminEnquiries from "@/pages/admin/Enquiries";
 
 function Router() {
   return (
     <Switch>
+      {/* Public Routes */}
       <Route path="/" component={Home} />
       <Route path="/products" component={Products} />
       <Route path="/contact" component={Contact} />
       <Route path="/about" component={About} />
+      
+      {/* Admin Routes */}
+      <Route path="/admin/login" component={AdminLogin} />
+      <Route path="/admin" component={AdminDashboard} />
+      <Route path="/admin/products" component={AdminProducts} />
+      <Route path="/admin/enquiries" component={AdminEnquiries} />
+      
       <Route component={NotFound} />
     </Switch>
   );
