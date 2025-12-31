@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SolarRay</title>
+    <script>
+      (function () {
+        var l = window.location;
+        var path = l.pathname;
+        var repoBaseMatch = path.match(/^\/(.+?)\//);
+        var repoBase = repoBaseMatch ? "/" + repoBaseMatch[1] + "/" : "/";
+        var relative = path.startsWith(repoBase) ? path.slice(repoBase.length - 1) : path;
+        var redirect = repoBase + "?" + relative.replace(/^\//, "") + (l.search ? "&" + l.search.slice(1) : "") + l.hash;
+        l.replace(redirect);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

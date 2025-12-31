@@ -5,7 +5,15 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 import { metaImagesPlugin } from "./vite-plugin-meta-images";
 
+const repoName = process.env.GITHUB_REPOSITORY?.split("/")?.[1];
+const githubPagesBase = repoName
+  ? repoName.endsWith(".github.io")
+    ? "/"
+    : `/${repoName}/`
+  : "/";
+
 export default defineConfig({
+  base: githubPagesBase,
   plugins: [
     react(),
     runtimeErrorOverlay(),

@@ -14,10 +14,20 @@
     <meta name="twitter:description" content="Premium solar panels and installation services for your home and business. Switch to clean energy today." />
     <meta name="twitter:image" content="https://replit.com/public/images/opengraph.png" />
 
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" href="%BASE_URL%favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+      (function () {
+        var l = window.location;
+        if (l.search && l.search.startsWith("?/")) {
+          var decoded = l.search.slice(2).split("&").join("?");
+          window.history.replaceState(null, "", l.pathname.replace(/\/404\.html$/, "") + decoded + l.hash);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
